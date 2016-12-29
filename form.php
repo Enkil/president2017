@@ -5,7 +5,7 @@ require_once ('settings.php');
 
 use UtmCookie\UtmCookie;
 
-if(isset($_POST['formname']))
+if(isset($_POST))
 {
 
     $err =  var_dump($_POST['formname'], true);
