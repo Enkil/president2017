@@ -5,7 +5,7 @@ require_once ('settings.php');
 
 use UtmCookie\UtmCookie;
 
-if(isset($_POST['formname']) or isset($_POST['formname2']))
+if(isset($_POST))
 {
 
     // Forms data
