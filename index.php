@@ -7,7 +7,7 @@
     use UtmCookie\UtmCookie;
     UtmCookie::init();
     UtmCookie::setName('president_utm');
-    UtmCookie::setOverwrite(false);
+    UtmCookie::setOverwrite(true);
     $dateInterval = DateInterval::createFromDateString('1 day');
     UtmCookie::setLifetime($dateInterval);
 ?>
