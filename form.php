@@ -61,7 +61,7 @@ if(isset($_POST['formname']) or isset($_POST['formname2']))
 //    $message = str_replace('%utm_content%', $utm_content, $message);
 //    $message = str_replace('%utm_term%', $utm_term, $message);
 //    $message = str_replace('%referer%', $referer, $message);
-    $message =  var_dump($phone2);
+    $message =  var_dump($_POST);
 
     // Email sending
     $mail = new PHPMailer();
