@@ -8,6 +8,8 @@ use UtmCookie\UtmCookie;
 if(isset($_POST['formname']))
 {
 
+    echo var_dump($_POST['formname']);
+
     // Forms data
     $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
     $email = htmlspecialchars(isset($_POST['email']) ? $_POST['email'] : '');
