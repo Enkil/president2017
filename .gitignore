@@ -1,7 +1,8 @@
+.idea
+/service-account-credentials.json
 /composer.lock
 /vendor
 /requests.csv
-/partials
 /Calendar2017-6733f6ae59df.p12
 /google48941a961ed627af.html
 /yandex_89fcca670cfdff63.html
