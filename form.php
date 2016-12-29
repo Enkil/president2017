@@ -8,7 +8,9 @@ use UtmCookie\UtmCookie;
 if(isset($_POST['formname']))
 {
 
-    $err =  var_dump($_POST['formname']);
+    $err =  var_dump($_POST['formname'], true);
+    var_dump($_POST['formname'], true);
+    echo var_dump($_POST['formname'], true);
 
     // Forms data
     $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
