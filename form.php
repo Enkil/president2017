@@ -5,18 +5,15 @@ require_once ('settings.php');
 
 use UtmCookie\UtmCookie;
 
-if(isset($_POST))
+if(isset($_POST['formname']) or isset($_POST['formname2']))
 {
-
-    $err =  var_dump($_POST['formname'], true);
-    var_dump($_POST['formname'], true);
-    echo var_dump($_POST['formname'], true);
 
     // Forms data
     $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
     $email = htmlspecialchars(isset($_POST['email']) ? $_POST['email'] : '');
     $name = htmlspecialchars(isset($_POST['name']) ? $_POST['name'] : '');
     $phone = htmlspecialchars(isset($_POST['phone']) ? $_POST['phone'] : '');
+    $phone2 = htmlspecialchars(isset($_POST['phone2']) ? $_POST['phone2'] : '');
     $promo = htmlspecialchars(isset($_POST['promo']) ? $_POST['promo'] : '');
     $today = date("Y-m-d H:i:s");
 
@@ -47,7 +44,12 @@ if(isset($_POST))
     $message = str_replace('%formname%', $formname, $message);
     $message = str_replace('%name%', $name, $message);
     $message = str_replace('%email%', $email, $message);
-    $message = str_replace('%phone%', $phone, $message);
+    
+    if ($phone){
+        $message = str_replace('%phone%', $phone, $message); 
+    } else{
+        $message = str_replace('%phone%', $phone2, $message);
+    }
     $message = str_replace('%promo%', $promo, $message);
     $message = str_replace('%country%', $country, $message);
     $message = str_replace('%region%', $region, $message);
