@@ -7,6 +7,61 @@ use UtmCookie\UtmCookie;
 
 echo var_dump($_POST);
 
+
+// Google Spreddsheets
+/**
+ * AUTHENTICATE
+ *
+ */
+// These settings are found on google developer console
+const CLIENT_APP_NAME = $settings['googleSpreedSheetsAppName'];
+const CLIENT_ID       = $settings['googleSpreedSheetsClientId'];
+const CLIENT_EMAIL    = $settings['googleSpreedSheetsClientEmail'];
+const CLIENT_KEY_PATH = $settings['googleSpreedSheetsP12']; // PATH_TO_KEY = where you keep your key file
+const CLIENT_KEY_PW   = 'notasecret';
+
+$objClientAuth  = new Google_Client ();
+$objClientAuth -> setApplicationName (CLIENT_APP_NAME);
+$objClientAuth -> setClientId (CLIENT_ID);
+$objClientAuth -> setAssertionCredentials (new Google_Auth_AssertionCredentials (
+    CLIENT_EMAIL,
+    array('https://spreadsheets.google.com/feeds','https://docs.google.com/feeds'),
+    file_get_contents (CLIENT_KEY_PATH),
+    CLIENT_KEY_PW
+));
+$objClientAuth->getAuth()->refreshTokenWithAssertion();
+$objToken  = json_decode($objClientAuth->getAccessToken());
+$accessToken = $objToken->access_token;
+
+
+/**
+ * Initialize the service request factory
+ */
+use Google\Spreadsheet\DefaultServiceRequest;
+use Google\Spreadsheet\ServiceRequestFactory;
+
+$serviceRequest = new DefaultServiceRequest($accessToken);
+ServiceRequestFactory::setInstance($serviceRequest);
+
+
+/**
+ * Get spreadsheet by title
+ */
+$spreadsheetService = new Google\Spreadsheet\SpreadsheetService();
+$spreadsheetFeed = $spreadsheetService->getSpreadsheets();
+$spreadsheet = $spreadsheetFeed->getById($settings['googleSpreedSheetsSpreedSheetID']);
+
+
+
+
+/**
+ * Get particular worksheet of the selected spreadsheet
+ */
+$worksheetFeed = $spreadsheet->getWorksheets();
+$worksheet = $worksheetFeed->getById($settings['googleSpreedSheetsWorkSheetID']);
+
+
+
 if(isset($_POST['formname']))
 {
     // Forms data
@@ -98,9 +153,21 @@ if(isset($_POST['formname']))
     fclose($file);
 
     // Send SMS
-    $body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode($settings['smsMessage'].$name.','.$email.','.$phone));
+    //$body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode($settings['smsMessage'].$name.','.$email.','.$phone));
 
     // Send data to Google Sheets
-//    require_once 'googleSheets.php';
+    /**
+     * Add/update headers of worksheet
+     */
+    $cellFeed = $worksheet->getCellFeed();
+    $cellFeed->editCell(1,3, "name"); // 1st row, 3rd column
+    $cellFeed->editCell(1,4, "age"); // 1st row, 4th column
     
+    /**
+     * Insert row entries
+     * Supposing, that there are two headers 'name' and 'age'
+     */
+    $row = array('name'=>'John', 'age'=>25);
+    $listFeed->insert($row);
+
 }
