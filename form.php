@@ -14,7 +14,7 @@ if(isset($_POST['formname']))
     $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
     $email = htmlspecialchars(isset($_POST['email']) ? $_POST['email'] : '');
     $name = htmlspecialchars(isset($_POST['name']) ? $_POST['name'] : '');
-    $phone = htmlspecialchars(isset($_POST['phone']) ? $_POST['phone'] : $_POST['modalPhone']);
+    $phone = htmlspecialchars(!empty($_POST['phone']) ? $_POST['phone'] : $_POST['modalPhone']);
     $promo = htmlspecialchars(isset($_POST['promo']) ? $_POST['promo'] : '');
     $today = date("Y-m-d H:i:s");
 
