@@ -9,7 +9,7 @@ if(isset($_POST['pageForm']))
 {
 
     // Forms data
-    $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
+    $formname = htmlspecialchars(isset($_POST['pageForm']) ? $_POST['pageForm'] : '');
     $email = htmlspecialchars(isset($_POST['email']) ? $_POST['email'] : '');
     $name = htmlspecialchars(isset($_POST['name']) ? $_POST['name'] : '');
     $phone = htmlspecialchars(isset($_POST['phone']) ? $_POST['phone'] : '');
