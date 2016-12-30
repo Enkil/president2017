@@ -12,7 +12,7 @@ if(isset($_POST['pageForm']))
     $formname = htmlspecialchars(isset($_POST['pageForm']) ? $_POST['pageForm'] : '');
     $email = htmlspecialchars(isset($_POST['email']) ? $_POST['email'] : '');
     $name = htmlspecialchars(isset($_POST['name']) ? $_POST['name'] : '');
-    $phone = htmlspecialchars(isset($_POST['phone']) ? $_POST['phone'] : '');
+    $phone = htmlspecialchars(isset($_POST['pagePhone']) ? $_POST['pagePhone'] : '');
     $promo = htmlspecialchars(isset($_POST['promo']) ? $_POST['promo'] : '');
     $today = date("Y-m-d H:i:s");
 
