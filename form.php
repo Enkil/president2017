@@ -10,7 +10,12 @@ if(isset($_POST['pageFormType']) or isset($_POST['modalFormType']))
 {
 
     // Forms data
-    $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
+    
+    if (isset($_POST['pageFormType'])) {
+        $formname = htmlspecialchars(isset($_POST['pageFormType']));
+    }
+    
+//    $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
     $email = htmlspecialchars(isset($_POST['email']) ? $_POST['email'] : '');
     $name = htmlspecialchars(isset($_POST['name']) ? $_POST['name'] : '');
     $phone = htmlspecialchars(isset($_POST['phone']) ? $_POST['phone'] : '');
