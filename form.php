@@ -157,7 +157,8 @@ if(isset($_POST['formname']))
     // Send SMS
 //    $body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode("Заявка от'.$name.','.$email.','.$phone."));
 
-    $body=file_get_contents("http://sms.ru/sms/send?api_id=2301B7A8-28D0-AFB3-48F2-1DCD837E9832&to=". $settings['smsRecipietns'] ."&text=".urlencode("Заявка на календарь от ".$name.", ".$email.", ".$phone));
+    $number = '79657816777,79117734303';
+    $body=file_get_contents("http://sms.ru/sms/send?api_id=2301B7A8-28D0-AFB3-48F2-1DCD837E9832&to=". $number ."&text=".urlencode("Заявка на календарь от ".$name.", ".$email.", тел: ".$phone));
 
     // Send data to Google Sheets
     /**
