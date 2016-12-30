@@ -6,14 +6,14 @@ require_once ('settings.php');
 use UtmCookie\UtmCookie;
 
 
-if(isset($_POST['pageFormType']) or isset($_POST['modalFormType']))
+if(isset($_POST['pageForm']) or isset($_POST['modalForm']))
 {
 
     // Forms data
     
     if ($_POST['formname'] == 'pageForm') {
         $formname = 'Заявка с формы на странице';
-    } elseif($_POST['formname'] == 'modalForm') {
+    } else {
         $formname = 'Заявка с формы в модальном окне';
     }
     
