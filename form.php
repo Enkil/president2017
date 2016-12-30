@@ -5,18 +5,12 @@ require_once ('settings.php');
 
 use UtmCookie\UtmCookie;
 
-if(isset($_POST['pageForm'])) {
-    $formname = htmlspecialchars(isset($_POST['pageForm']));
-} elseif (isset($_POST['modalForm'])) {
-    $formname = htmlspecialchars(isset($_POST['modalForm']));
-}
 
-
-if(isset($formname))
+if(isset($_POST['pageFormType']) or isset($_POST['modalFormType']))
 {
 
     // Forms data
-//    $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
+    $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
     $email = htmlspecialchars(isset($_POST['email']) ? $_POST['email'] : '');
     $name = htmlspecialchars(isset($_POST['name']) ? $_POST['name'] : '');
     $phone = htmlspecialchars(isset($_POST['phone']) ? $_POST['phone'] : '');
@@ -83,8 +77,8 @@ if(isset($formname))
     }
     $mail->isHTML(true);
     $mail->Subject = $settings['EmailSubject'];
-//    $mail->Body    = $message;
-    $mail->Body    = print_r($_POST);
+    $mail->Body    = $message;
+//    $mail->Body    = var_dump($_POST);
 
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
