@@ -3,7 +3,7 @@
 require_once ('vendor/autoload.php');
 require_once ('settings.php');
 
-use UtmCookie\UtmCookie;
+//use UtmCookie\UtmCookie;
 
 if(isset($_POST['formname']))
 {
@@ -16,12 +16,12 @@ if(isset($_POST['formname']))
     $promo = htmlspecialchars(isset($_POST['promo']) ? $_POST['promo'] : '');
     $today = date("Y-m-d H:i:s");
 
-    $utm_source = UtmCookie::get('utm_source');
-    $utm_medium = UtmCookie::get('utm_medium');
-    $utm_campaign = UtmCookie::get('utm_campaign');
-    $utm_term = UtmCookie::get('utm_term');
-    $utm_content = UtmCookie::get('utm_content');
-    $referer = htmlspecialchars(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '');
+//    $utm_source = UtmCookie::get('utm_source');
+//    $utm_medium = UtmCookie::get('utm_medium');
+//    $utm_campaign = UtmCookie::get('utm_campaign');
+//    $utm_term = UtmCookie::get('utm_term');
+//    $utm_content = UtmCookie::get('utm_content');
+//    $referer = htmlspecialchars(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '');
 
     // SypexGeo
     $ip = $_SERVER['REMOTE_ADDR'];
