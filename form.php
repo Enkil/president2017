@@ -5,11 +5,16 @@ require_once ('settings.php');
 
 use UtmCookie\UtmCookie;
 
-if(isset($_POST['formname1']) or isset($_POST['formname1']))
+if(isset($_POST['formname1']) or isset($_POST['formname2']))
 {
 
     // Forms data
-    $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
+    if (isset($_POST['formname'])) {
+        $formname = htmlspecialchars(isset($_POST['formname']));
+    } else {
+        $formname = htmlspecialchars(isset($_POST['formname2']));
+    }
+//    $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
     $email = htmlspecialchars(isset($_POST['email']) ? $_POST['email'] : '');
     $name = htmlspecialchars(isset($_POST['name']) ? $_POST['name'] : '');
     $phone = htmlspecialchars(isset($_POST['phone']) ? $_POST['phone'] : '');
