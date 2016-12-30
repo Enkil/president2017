@@ -9,7 +9,6 @@ echo var_dump($_POST);
 
 if(isset($_POST['formname']))
 {
-
     // Forms data
     $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
     $email = htmlspecialchars(isset($_POST['email']) ? $_POST['email'] : '');
@@ -36,7 +35,6 @@ if(isset($_POST['formname']))
     $timezone = $geodata['region']['timezone'];
     date_default_timezone_set($timezone);
     $region_time = date("Y-m-d H:i:s");
-
     
     // Email body
     $message = file_get_contents('partials/templates/mail.html');
@@ -79,7 +77,6 @@ if(isset($_POST['formname']))
     $mail->isHTML(true);
     $mail->Subject = $settings['EmailSubject'];
     $mail->Body    = $message;
-//    $mail->Body    = var_dump($_POST);
 
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
@@ -92,9 +89,7 @@ if(isset($_POST['formname']))
         return iconv( "utf-8", "windows-1251",$ii);
     }
     header('Content-Type: text/csv; charset=windows-1251');
-
     $file = fopen($settings['fileForRequests'], 'a');
-
     $settings['fileForRequestsTitles'] = [$formname,$phone,$email,$name,$promo,$country,$region,$city,$region_time,$utm_source,$utm_medium,$utm_campaign,$utm_content,$utm_term,$referer];
     foreach($settings['fileForRequestsTitles'] as $p=>$titlesItem){
         $settings['fileForRequestsTitles'][$p] = toWindow($titlesItem);
@@ -102,16 +97,10 @@ if(isset($_POST['formname']))
     fputcsv($file, $settings['fileForRequestsTitles'], ";");
     fclose($file);
 
-
     // Send SMS
     $body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode($settings['smsMessage'].$name.','.$email.','.$phone));
 
     // Send data to Google Sheets
 //    require_once 'googleSheets.php';
-
-
     
-
-
-
 }
