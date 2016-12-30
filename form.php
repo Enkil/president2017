@@ -5,6 +5,7 @@ require_once ('settings.php');
 
 use UtmCookie\UtmCookie;
 
+echo var_dump($_POST);
 
 if(isset($_POST['formname']))
 {
