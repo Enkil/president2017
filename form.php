@@ -5,14 +5,14 @@ require_once ('settings.php');
 
 use UtmCookie\UtmCookie;
 
-if(isset($_POST['pageForm']))
+if(isset($_POST['formname']))
 {
 
     // Forms data
-    $formname = htmlspecialchars(isset($_POST['pageForm']) ? $_POST['pageForm'] : '');
+    $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
     $email = htmlspecialchars(isset($_POST['email']) ? $_POST['email'] : '');
     $name = htmlspecialchars(isset($_POST['name']) ? $_POST['name'] : '');
-    $phone = htmlspecialchars(isset($_POST['pagePhone']) ? $_POST['pagePhone'] : '');
+    $phone = htmlspecialchars(isset($_POST['phone']) ? $_POST['phone'] : '');
     $promo = htmlspecialchars(isset($_POST['promo']) ? $_POST['promo'] : '');
     $today = date("Y-m-d H:i:s");
 
