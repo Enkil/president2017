@@ -5,7 +5,14 @@ require_once ('settings.php');
 
 use UtmCookie\UtmCookie;
 
-if(isset($_POST['wwwwww']))
+if(isset($_POST['pageForm'])) {
+    $formname = htmlspecialchars(isset($_POST['pageForm']));
+} elseif (sset($_POST['modalForm'])) {
+    $formname = htmlspecialchars(isset($_POST['modalForm']));
+}
+
+
+if(isset($formname))
 {
 
     // Forms data
