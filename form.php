@@ -7,7 +7,7 @@ use UtmCookie\UtmCookie;
 
 if(isset($_POST['pageForm'])) {
     $formname = htmlspecialchars(isset($_POST['pageForm']));
-} elseif (sset($_POST['modalForm'])) {
+} elseif (isset($_POST['modalForm'])) {
     $formname = htmlspecialchars(isset($_POST['modalForm']));
 }
 
