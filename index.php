@@ -124,9 +124,9 @@
               <div class="order-now">
                 <h2 class="order-now__title">Закажи сейчас и получи 25% скидку</h2>
                 <div class="order-now__description">Процесс заказа займет не более 30 сек.</div>
-                <form id="form1" class="order-now__form" method="post" action="form.php" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('orderOnPage'); return true;">
+                <form name="pageForm" id="form1" class="order-now__form" method="post" action="form.php" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('orderOnPage'); return true;">
                   <input class="order-now__input" type="tel" name="phone" placeholder="Ваш телефон" required="required" />
-                  <input class="order-now__input" type="hidden" name="formname1" value="Заявка с формы на странице"/>
+                  <input class="order-now__input" type="hidden" name="formname" value="Заявка с формы на странице"/>
                   <button class="btn btn--form" type="submit">Заказать</button>
                 </form>
               </div>
@@ -261,11 +261,11 @@
       <div class="overlay__bg"></div>
       <div class="overlay__wrapper">
         <a class="overlay__close" href="#"></a>
-        <form id="form2" class="form" method="post" action="form.php" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('orderInModal'); return true;">
+        <form name="modalForm" id="form2" class="form" method="post" action="form.php" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('orderInModal'); return true;">
           <input class="form__input" type="text" name="name" placeholder="Ваше имя" required="required" />
           <input class="form__input" type="tel" name="phone" placeholder="Ваш телефон" required="required" />
           <input class="form__input" type="text" name="promo" placeholder="Промокод" />
-          <input class="form__input" type="hidden" name="formname2" value="Заявка с формы в модальном окне"/>
+          <input class="form__input" type="hidden" name="formname" value="Заявка с формы в модальном окне"/>
           <button class="btn btn--form" type="submit">Заказать</button>
         </form>
       </div>
