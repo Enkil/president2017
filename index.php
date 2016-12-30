@@ -4,12 +4,12 @@
     require_once ('settings.php');
 
     // UTM
-//    use UtmCookie\UtmCookie;
-//    UtmCookie::init();
-//    UtmCookie::setName('president_utm');
-//    UtmCookie::setOverwrite(true);
-//    $dateInterval = DateInterval::createFromDateString('1 day');
-//    UtmCookie::setLifetime($dateInterval);
+    use UtmCookie\UtmCookie;
+    UtmCookie::init();
+    UtmCookie::setName('president_utm');
+    UtmCookie::setOverwrite(true);
+    $dateInterval = DateInterval::createFromDateString('1 day');
+    UtmCookie::setLifetime($dateInterval);
 ?>
 
 <!DOCTYPE html>
