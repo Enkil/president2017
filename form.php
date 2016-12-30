@@ -125,9 +125,13 @@ if(isset($_POST['formname']))
 //    $mail->Port = $settings['EmailSMTPPort'];
     $mail->CharSet = 'UTF-8';
     $mail->setFrom('dk@regnum.ru', 'Regnum.ru');
-    foreach ($settings['EmailRecipietns'] as $emailRecipient) {
-        $mail->addAddress($emailRecipient);
-    }
+    $mail->addAddress('dk@regnum.ru');
+    $mail->addAddress('sinilga.from.forest@gmail.com');
+    $mail->addAddress(timohin.i@gmail.com);
+  
+//    foreach ($settings['EmailRecipients'] as $emailRecipient) {
+//        $mail->addAddress($emailRecipient);
+//    }
     foreach ($settings['EmailReplyTo'] as $emailReplyTo) {
         $mail->addReplyTo($emailReplyTo);
     }
@@ -155,10 +159,7 @@ if(isset($_POST['formname']))
     fclose($file);
 
     // Send SMS
-//    $body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode("Заявка от'.$name.','.$email.','.$phone."));
-
-//    $number = 79657816777,79117734303;
-    $body=file_get_contents("http://sms.ru/sms/send?api_id=2301B7A8-28D0-AFB3-48F2-1DCD837E9832&to=". $settings['smsRecipietns'] ."&text=".urlencode("Заявка на календарь от ".$name.", ".$email.", тел: ".$phone));
+    $body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode("Заявка от'.$name.','.$email.','.$phone."));
 
     // Send data to Google Sheets
     /**
