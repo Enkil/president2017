@@ -126,8 +126,8 @@
                 <div class="order-now__description">Процесс заказа займет не более 30 сек.</div>
                 <form name="pageForm" id="pageForm" class="order-now__form" method="post" action="form.php" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('orderOnPage'); return true;">
                   <input class="order-now__input" type="tel" name="pagePhone" placeholder="Ваш телефон" required="required" />
-<!--                  <input class="order-now__input" type="hidden" name="pageFormType" value="Заявка с формы на странице"/>-->
-                  <button class="btn btn--form" type="submit" name="formname" value="pageForm">Заказать</button>
+                  <input class="order-now__input" type="hidden" name="formname" value="Заявка с формы на странице"/>
+                  <button class="btn btn--form" type="submit">Заказать</button>
                 </form>
               </div>
             </div>
@@ -265,8 +265,8 @@
           <input class="form__input" type="text" name="name" placeholder="Ваше имя" required="required" />
           <input class="form__input" type="tel" name="modalPhone" placeholder="Ваш телефон" required="required" />
           <input class="form__input" type="text" name="promo" placeholder="Промокод" />
-<!--          <input class="form__input" type="hidden" name="modalFormType" value="Заявка с формы в модальном окне"/>-->
-          <button class="btn btn--form" type="submit" name="formname" value="modalForm">Заказать</button>
+          <input class="form__input" type="hidden" name="formname" value="Заявка с формы в модальном окне"/>
+          <button class="btn btn--form" type="submit">Заказать</button>
         </form>
       </div>
     </div>
