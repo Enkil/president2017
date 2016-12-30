@@ -13,6 +13,8 @@ if(isset($_POST['pageFormType']) or isset($_POST['modalFormType']))
     
     if (isset($_POST['pageFormType'])) {
         $formname = htmlspecialchars(isset($_POST['pageFormType']));
+    } else {
+        $formname = htmlspecialchars(isset($_POST['modalFormType']));
     }
     
 //    $formname = htmlspecialchars(isset($_POST['formname']) ? $_POST['formname'] : '');
