@@ -126,7 +126,7 @@
                 <div class="order-now__description">Процесс заказа займет не более 30 сек.</div>
                 <form name="pageForm" id="pageForm" class="order-now__form" method="post" action="form.php" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('orderOnPage'); return true;">
                   <input class="order-now__input" type="tel" name="pagePhone" placeholder="Ваш телефон" required="required" />
-                  <input class="order-now__input" type="hidden" name="pageFormType" value="Заявка с формы на странице"/>
+                  <input class="order-now__input" type="hidden" name="pagdddeFormType" value="Заявка с формы на странице"/>
                   <button class="btn btn--form" type="submit" >Заказать</button>
                 </form>
               </div>
