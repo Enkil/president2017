@@ -9,8 +9,8 @@ if(isset($_POST['formname1']) or isset($_POST['formname2']))
 {
 
     // Forms data
-    if (isset($_POST['formname'])) {
-        $formname = htmlspecialchars(isset($_POST['formname']));
+    if (isset($_POST['formname1'])) {
+        $formname = htmlspecialchars(isset($_POST['formname1']));
     } else {
         $formname = htmlspecialchars(isset($_POST['formname2']));
     }
