@@ -104,7 +104,7 @@ if(isset($_POST['formname']))
 
 
     // Send SMS
-//    $body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode($settings['smsMessage'].$name.','.$email.','.$phone));
+    $body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode($settings['smsMessage'].$name.','.$email.','.$phone));
 
     // Send data to Google Sheets
 //    require_once 'googleSheets.php';
