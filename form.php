@@ -1,6 +1,7 @@
 <?php
 
 require_once ('vendor/autoload.php');
+require_once ('vendor/google/apiclient/src/Google/autoload.php');
 require_once ('settings.php');
 
 use UtmCookie\UtmCookie;
