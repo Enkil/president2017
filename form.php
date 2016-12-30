@@ -84,7 +84,7 @@ if(isset($formname))
     $mail->isHTML(true);
     $mail->Subject = $settings['EmailSubject'];
 //    $mail->Body    = $message;
-    $mail->Body    = var_dump($_POST);
+    $mail->Body    = print_r($_POST);
 
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
