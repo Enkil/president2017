@@ -337,5 +337,11 @@
       ga('create', '<?php echo $app['googleAnalytics'] ?>', 'auto');
       ga('send', 'pageview');
     </script>
+
+
+    <?php
+    echo var_dump($_POST);
+    ?>
+
   </body>
 </html>
