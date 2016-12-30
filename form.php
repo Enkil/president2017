@@ -14,20 +14,20 @@ echo var_dump($_POST);
  *
  */
 // These settings are found on google developer console
-const CLIENT_APP_NAME = $settings['googleSpreedSheetsAppName'];
-const CLIENT_ID       = $settings['googleSpreedSheetsClientId'];
-const CLIENT_EMAIL    = $settings['googleSpreedSheetsClientEmail'];
-const CLIENT_KEY_PATH = $settings['googleSpreedSheetsP12']; // PATH_TO_KEY = where you keep your key file
-const CLIENT_KEY_PW   = 'notasecret';
+$CLIENT_APP_NAME = $settings['googleSpreedSheetsAppName'];
+$CLIENT_ID       = $settings['googleSpreedSheetsClientId'];
+$CLIENT_EMAIL    = $settings['googleSpreedSheetsClientEmail'];
+$CLIENT_KEY_PATH = $settings['googleSpreedSheetsP12']; // PATH_TO_KEY = where you keep your key file
+$CLIENT_KEY_PW   = 'notasecret';
 
 $objClientAuth  = new Google_Client ();
-$objClientAuth -> setApplicationName (CLIENT_APP_NAME);
-$objClientAuth -> setClientId (CLIENT_ID);
+$objClientAuth -> setApplicationName ($CLIENT_APP_NAME);
+$objClientAuth -> setClientId ($CLIENT_ID);
 $objClientAuth -> setAssertionCredentials (new Google_Auth_AssertionCredentials (
-    CLIENT_EMAIL,
+    $CLIENT_EMAIL,
     array('https://spreadsheets.google.com/feeds','https://docs.google.com/feeds'),
-    file_get_contents (CLIENT_KEY_PATH),
-    CLIENT_KEY_PW
+    file_get_contents ($CLIENT_KEY_PATH),
+    $CLIENT_KEY_PW
 ));
 $objClientAuth->getAuth()->refreshTokenWithAssertion();
 $objToken  = json_decode($objClientAuth->getAccessToken());
