@@ -263,7 +263,7 @@
         <a class="overlay__close" href="#"></a>
         <form name="modalForm" id="modalForm" class="form" method="post" action="form.php" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('orderInModal'); return true;">
           <input class="form__input" type="text" name="name" placeholder="Ваше имя" required="required" />
-          <input class="form__input" type="tel" name="phone" placeholder="Ваш телефон" required="required" />
+          <input class="form__input" type="tel" name="modalPhone" placeholder="Ваш телефон" required="required" />
           <input class="form__input" type="text" name="promo" placeholder="Промокод" />
           <input class="form__input" type="hidden" name="formname" value="Заявка с формы в модальном окне"/>
           <button class="btn btn--form" type="submit">Заказать</button>
