@@ -4,6 +4,8 @@
 /vendor
 /president2017-aeacd9444ebd.p12
 /president2017-a6e89be5842a.json
+/tmp
+!/tmp/.gitignore
 /requests.csv
 /Calendar2017-6733f6ae59df.p12
 /google48941a961ed627af.html
