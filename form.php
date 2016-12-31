@@ -69,7 +69,7 @@ if(isset($_POST['formname']))
     $promo = htmlspecialchars(isset($_POST['promo']) ? $_POST['promo'] : '');
     $today = date("Y-m-d H:i:s");
 
-    $utm_source = UtmCookie::get('utm_source');
+    $utm_source = UtmCookie::get('utm_source') ;
     $utm_medium = UtmCookie::get('utm_medium');
     $utm_campaign = UtmCookie::get('utm_campaign');
     $utm_term = UtmCookie::get('utm_term');
@@ -167,8 +167,7 @@ if(isset($_POST['formname']))
      * Supposing, that there are two headers 'name' and 'age'
      */
 
-//    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name, 'промо-код'=>$promo, 'адрес доставки'=>$country.' '.$region.' '.$city, 'источник'=>$utm_source);
-    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name, 'промо-код'=>$promo);
+    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name, 'промо-код'=>$promo, 'адрес доставки'=>($country) ? $country : ''.' '.($region) ? $region : ''.' '.($city) ? $city : '', 'источник'=>($utm_source) ? $utm_source : '');
     $listFeed->insert($row);
 
 }
