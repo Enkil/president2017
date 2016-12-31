@@ -122,7 +122,7 @@
           <div class="row">
             <div class="col-xs-12 col-lg-7 offset-lg-4">
               <div class="order-now">
-                <h2 class="order-now__title">Закажи сейчас и получи 25% скидку</h2>
+                <h2 class="order-now__title">Закажи сейчас и получи скидку в 25%</h2>
                 <div class="order-now__description">Процесс заказа займет не более 30 сек.</div>
                 <form class="order-now__form" method="post" action="form.php" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('orderOnPage'); return true;">
                   <input class="order-now__input" type="tel" name="phone" placeholder="Ваш телефон" required="required" />
@@ -178,7 +178,7 @@
             <div class="col-xs-12 col-xl-6">
               <div class="gallery__text">
                 <div class="gallery__text-blue">
-                  <p>Хочешь чтобы о твоем подарке помнили весь год? </p>
+                  <p>Хочешь, чтобы о твоем подарке помнили весь год? </p>
                 </div>
                 <div class="gallery__text-black">
                   <p>Не упусти уникальную возможность</p>
