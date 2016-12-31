@@ -4,6 +4,16 @@ require_once ('vendor/autoload.php');
 require_once ('vendor/google/apiclient/src/Google/autoload.php');
 require_once ('settings.php');
 
+function address($country, $city, $region){
+    $string = check($country).','.check($city).','.check($region);
+    return $string;
+}
+
+function check($var,$message = ''){
+    return ($var) ? $var : $message;
+}
+
+
 use UtmCookie\UtmCookie;
 
 echo var_dump($_POST);
@@ -153,15 +163,6 @@ if(isset($_POST['formname']))
 
     // Send SMS
     $body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode("Заявка от'.$name.','.$email.','.$phone."));
-
-    function address($country, $city, $region){
-        $string = check($country).','.check($city).','.check($region);
-        return $string;
-    }
-
-    function check($var,$message = ''){
-        return ($var) ? $var : $message;
-    }
     
     $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name,  'адрес'=>address($country,$city,$region),'промо-код'=>$promo,'источник'=>($utm_source) ? $utm_source : 0);
     $listFeed->insert($row);
