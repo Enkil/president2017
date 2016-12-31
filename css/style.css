@@ -1076,7 +1076,9 @@ img {
       border: 2px solid green; }
   .form__success {
     padding-top: 20px;
-    font-weight: bold; }
+    font-weight: bold;
+    color: green;
+    display: none; }
   .form .btn {
     max-width: 100%; }
 
@@ -1264,7 +1266,9 @@ img {
       border: 2px solid green; }
   .order-now__success {
     padding-top: 20px;
-    font-weight: bold; }
+    font-weight: bold;
+    color: green;
+    display: none; }
   .order-now__btn {
     margin-bottom: 20px; }
 

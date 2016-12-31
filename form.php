@@ -52,16 +52,12 @@ $spreadsheetService = new Google\Spreadsheet\SpreadsheetService();
 $spreadsheetFeed = $spreadsheetService->getSpreadsheetFeed();
 $spreadsheet = $spreadsheetFeed->getById($settings['googleSpreedSheetsSpreedSheetID']);
 
-
-
-
 /**
  * Get particular worksheet of the selected spreadsheet
  */
 $worksheetFeed = $spreadsheet->getWorksheetFeed();
 $worksheet = $worksheetFeed->getById($settings['googleSpreedSheetsWorkSheetID']);
-
-
+$listFeed = $worksheet->getListFeed();
 
 if(isset($_POST['formname']))
 {
@@ -170,7 +166,8 @@ if(isset($_POST['formname']))
      * Insert row entries
      * Supposing, that there are two headers 'name' and 'age'
      */
-    $row = array('name'=>'John', 'age'=>25);
+
+    $row = array('Дата'=>$today, 'Статус'=>'Новая с email', 'Оператор'=>'Тест');
     $listFeed->insert($row);
 
 }
