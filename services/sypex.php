@@ -1,5 +1,5 @@
 <?php
-require_once ('./settings.php');
+require_once ('../settings.php');
 
 // SypexGeo
 $ip = $_SERVER['REMOTE_ADDR'];
