@@ -36,18 +36,18 @@ $objToken  = json_decode($objClientAuth->getAccessToken());
 $accessToken = $objToken->access_token;
 
 
-///**
-// * Initialize the service request factory
-// */
+/**
+ * Initialize the service request factory
+ */
 use Google\Spreadsheet\DefaultServiceRequest;
 use Google\Spreadsheet\ServiceRequestFactory;
 
 $serviceRequest = new DefaultServiceRequest($accessToken);
 ServiceRequestFactory::setInstance($serviceRequest);
 
-///**
-// * Get spreadsheet by id
-// */
+/**
+ * Get spreadsheet by id
+ */
 $spreadsheetService = new Google\Spreadsheet\SpreadsheetService();
 $spreadsheetFeed = $spreadsheetService->getSpreadsheetFeed();
 $spreadsheet = $spreadsheetFeed->getById($settings['googleSpreedSheetsSpreedSheetID']);
@@ -55,9 +55,9 @@ $spreadsheet = $spreadsheetFeed->getById($settings['googleSpreedSheetsSpreedShee
 
 
 
-///**
-// * Get particular worksheet of the selected spreadsheet
-// */
+/**
+ * Get particular worksheet of the selected spreadsheet
+ */
 $worksheetFeed = $spreadsheet->getWorksheetFeed();
 $worksheet = $worksheetFeed->getById($settings['googleSpreedSheetsWorkSheetID']);
 
