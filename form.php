@@ -154,9 +154,6 @@ if(isset($_POST['formname']))
     // Send SMS
     $body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode("Заявка от'.$name.','.$email.','.$phone."));
 
-//    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name, 'промо-код'=>$promo, 'источник'=>($utm_source) ? $utm_source : '');
-//    $listFeed->insert($row);
-
     function address($country, $city, $region){
         $string = check($country).','.check($city).','.check($region);
         return $string;
