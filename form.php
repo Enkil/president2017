@@ -139,6 +139,11 @@ if(isset($_POST['formname']))
     $mail->Subject = $settings['EmailSubject'];
     $mail->Body    = $message;
 
+    echo '<pre>';
+    echo var_dump($mail);
+    echo '</pre>';
+    exit;
+
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
