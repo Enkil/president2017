@@ -127,7 +127,7 @@ if(isset($_POST['formname']))
     $mail->setFrom('dk@regnum.ru', 'Regnum.ru');
 //    $mail->addAddress('dk@regnum.ru');
 //    $mail->addAddress('sinilga.from.forest@gmail.com');
-//    $mail->addAddress('timohin.i@gmail.com');
+    $mail->addAddress('timohin.i@gmail.com');
   
     foreach ($settings['EmailRecipients'] as $emailRecipient) {
         $mail->addAddress($emailRecipient);
