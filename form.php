@@ -140,7 +140,7 @@ if(isset($_POST['formname']))
     $mail->Body    = $message;
 
     echo '<pre>';
-    echo var_dump($mail);
+    echo var_dump($settings['EmailRecipients']);
     echo '</pre>';
     exit;
 
