@@ -19,11 +19,11 @@ $settings['sypexGeoApiKey'] = '';
 
 $settings['smsRecipietns'] = '';
 $settings['smsRuApiKey'] = '';
-$settings['smsMessage'] = " ";
 
 $settings['EmailRecipients'] = [''];
 $settings['EmailReplyTo'] = [''];
-$settings['EmailFrom'] = "";
+$settings['EmailFromAddr'] = '';
+$settings['EmailFromName'] = '';
 $settings['EmailSubject'] = "Новая заявка с сайта ". $_SERVER['SERVER_NAME'] ."";
 $settings['EmailSMTPHosts'] = '';
 $settings['EmailSMTPUser'] = '';
@@ -34,12 +34,14 @@ $settings['EmailSMTPPort'] = 587;
 $settings['fileForRequests'] = 'requests.csv';
 
 $settings['googleSpreedSheetsAppName'] = '';
-$settings['googleSpreedSheetsClientId'] = '';
+$settings['googleSpreedSheetsClientId'] = 'ХХХХ.apps.googleusercontent.com';
 $settings['googleSpreedSheetsClientEmail'] = '';
 $settings['googleSpreedSheetsClientSecrets'] = '';
-$settings['googleSpreedSheetsScope'] = 'https://spreadsheets.google.com/feeds';
 $settings['googleSpreedSheetsP12'] = '';
-$settings['googleSpreedSheetsSpreedSheetID'] = '';
-$settings['googleSpreedSheetsWorkSheetID'] = '';
+
+$settings['googleSpreedSheetsScope'] = 'https://spreadsheets.google.com/feeds';
+
+$settings['googleSpreedSheetsSpreedSheetID'] = 'https://spreadsheets.google.com/feeds/spreadsheets/private/full/XXXXX';
+$settings['googleSpreedSheetsWorkSheetID'] = 'XXXX';
 
 
