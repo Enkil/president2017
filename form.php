@@ -167,7 +167,8 @@ if(isset($_POST['formname']))
      * Supposing, that there are two headers 'name' and 'age'
      */
 
-    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name, 'промо-код'=>$promo, 'адрес доставки'=>$country.' '.$region.' '.$city, 'источник'=>$utm_source);
+//    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name, 'промо-код'=>$promo, 'адрес доставки'=>$country.' '.$region.' '.$city, 'источник'=>$utm_source);
+    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name, 'промо-код'=>$promo);
     $listFeed->insert($row);
 
 }
