@@ -1074,6 +1074,9 @@ img {
       border: 2px solid red; }
     .form__input.-valid {
       border: 2px solid green; }
+  .form__success {
+    padding-top: 20px;
+    font-weight: bold; }
   .form .btn {
     max-width: 100%; }
 
@@ -1259,6 +1262,9 @@ img {
       border: 2px solid red; }
     .order-now__input.-valid {
       border: 2px solid green; }
+  .order-now__success {
+    padding-top: 20px;
+    font-weight: bold; }
   .order-now__btn {
     margin-bottom: 20px; }
 
