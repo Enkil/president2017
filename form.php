@@ -154,20 +154,20 @@ if(isset($_POST['formname']))
     // Send SMS
     $body=file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode("Заявка от'.$name.','.$email.','.$phone."));
 
-    // Send data to Google Sheets
-    /**
-     * Add/update headers of worksheet
-     */
-//    $cellFeed = $worksheet->getCellFeed();
-//    $cellFeed->editCell(1,3, "name"); // 1st row, 3rd column
-//    $cellFeed->editCell(1,4, "age"); // 1st row, 4th column
-    
-    /**
-     * Insert row entries
-     * Supposing, that there are two headers 'name' and 'age'
-     */
+//    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name, 'промо-код'=>$promo, 'источник'=>($utm_source) ? $utm_source : '');
+//    $listFeed->insert($row);
 
-    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name, 'промо-код'=>$promo, 'источник'=>($utm_source) ? $utm_source : '');
+    function address($country, $city, $region){
+        $string = check($country).','.check($city).','.check($region);
+        return $string;
+    }
+
+    function check($var,$message = ''){
+        return ($var) ? $var : $message;
+    }
+    
+    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$phone, 'e-mail'=>$email, 'фио'=>$name,  'адрес'=>address($country,$city,$region),'промо-код'=>$promo,'источник'=>($utm_source) ? $utm_source : 0);
     $listFeed->insert($row);
+    
 
 }
