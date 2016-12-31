@@ -49,7 +49,7 @@ ServiceRequestFactory::setInstance($serviceRequest);
 // * Get spreadsheet by id
 // */
 $spreadsheetService = new Google\Spreadsheet\SpreadsheetService();
-$spreadsheetFeed = $spreadsheetService->getSpreadsheets();
+$spreadsheetFeed = $spreadsheetService->getSpreadsheetFeed();
 $spreadsheet = $spreadsheetFeed->getById($settings['googleSpreedSheetsSpreedSheetID']);
 
 
@@ -58,7 +58,7 @@ $spreadsheet = $spreadsheetFeed->getById($settings['googleSpreedSheetsSpreedShee
 ///**
 // * Get particular worksheet of the selected spreadsheet
 // */
-$worksheetFeed = $spreadsheet->getWorksheets();
+$worksheetFeed = $spreadsheet->getWorksheetFeed();
 $worksheet = $worksheetFeed->getById($settings['googleSpreedSheetsWorkSheetID']);
 
 
