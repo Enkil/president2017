@@ -125,13 +125,13 @@ if(isset($_POST['formname']))
 //    $mail->Port = $settings['EmailSMTPPort'];
     $mail->CharSet = 'UTF-8';
     $mail->setFrom('dk@regnum.ru', 'Regnum.ru');
-    $mail->addAddress('dk@regnum.ru');
-    $mail->addAddress('sinilga.from.forest@gmail.com');
-    $mail->addAddress('timohin.i@gmail.com');
+//    $mail->addAddress('dk@regnum.ru');
+//    $mail->addAddress('sinilga.from.forest@gmail.com');
+//    $mail->addAddress('timohin.i@gmail.com');
   
-//    foreach ($settings['EmailRecipients'] as $emailRecipient) {
-//        $mail->addAddress($emailRecipient);
-//    }
+    foreach ($settings['EmailRecipients'] as $emailRecipient) {
+        $mail->addAddress($emailRecipient);
+    }
     foreach ($settings['EmailReplyTo'] as $emailReplyTo) {
         $mail->addReplyTo($emailReplyTo);
     }
