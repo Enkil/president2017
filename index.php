@@ -268,7 +268,7 @@
           <input class="form__input" type="text" name="promo" placeholder="Промокод" />
           <input class="form__input" type="hidden" name="formname" value="Заявка с формы в модальном окне"/>
           <button class="btn btn--form" type="submit">Заказать</button>
-            <span class="form__success">Спасибо, заявка принята! Наши сотрудники свяжутся с Вами в ближайшее время!</span>
+            <span class="form__success">Спасибо, заявка принята! <br/>Наши сотрудники свяжутся с Вами в ближайшее время!</span>
         </form>
       </div>
     </div>
