@@ -128,7 +128,7 @@
                   <input class="order-now__input" type="tel" name="phone" placeholder="Ваш телефон" required="required" />
                   <input class="order-now__input" type="hidden" name="formname" value="Заявка с формы на странице"/>
                   <button class="btn btn--form" type="submit">Заказать</button>
-                  <span class="order-now__success">Спасибо, заявка принята! Наши сотрудники свяжутся с Вами в ближайшее время!</span>
+                  <span class="form__success">Спасибо, заявка принята! Наши сотрудники свяжутся с Вами в ближайшее время!</span>
                 </form>
               </div>
             </div>

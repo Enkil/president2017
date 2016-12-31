@@ -119,7 +119,7 @@ if(isset($_POST['formname']))
 //    $mail->SMTPSecure = $settings['EmailSMTPSecure'];
 //    $mail->Port = $settings['EmailSMTPPort'];
     $mail->CharSet = 'UTF-8';
-    $mail->setFrom($settings['EmailFrom']);
+    $mail->setFrom($settings['EmailFromAddr'],$settings['EmailFromName']);
   
     foreach ($settings['EmailRecipients'] as $emailRecipient) {
         $mail->addAddress($emailRecipient);
