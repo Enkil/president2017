@@ -21,7 +21,7 @@ $settings['smsRecipietns'] = '';
 $settings['smsRuApiKey'] = '';
 $settings['smsMessage'] = " ";
 
-$settings['EmailRecipietns'] = [''];
+$settings['EmailRecipients'] = [''];
 $settings['EmailReplyTo'] = [''];
 $settings['EmailFrom'] = "";
 $settings['EmailSubject'] = "Новая заявка с сайта ". $_SERVER['SERVER_NAME'] ."";

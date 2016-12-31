@@ -125,9 +125,6 @@ if(isset($_POST['formname']))
 //    $mail->Port = $settings['EmailSMTPPort'];
     $mail->CharSet = 'UTF-8';
     $mail->setFrom('dk@regnum.ru', 'Regnum.ru');
-//    $mail->addAddress('dk@regnum.ru');
-//    $mail->addAddress('sinilga.from.forest@gmail.com');
-    $mail->addAddress('timohin.i@gmail.com');
   
     foreach ($settings['EmailRecipients'] as $emailRecipient) {
         $mail->addAddress($emailRecipient);
@@ -135,14 +132,10 @@ if(isset($_POST['formname']))
     foreach ($settings['EmailReplyTo'] as $emailReplyTo) {
         $mail->addReplyTo($emailReplyTo);
     }
+    
     $mail->isHTML(true);
     $mail->Subject = $settings['EmailSubject'];
     $mail->Body    = $message;
-
-    echo '<pre>';
-    echo var_dump($settings['EmailRecipients']);
-    echo '</pre>';
-    exit;
 
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
