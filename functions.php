@@ -89,9 +89,9 @@ function sendSms($settings,$data){
     return file_get_contents("http://sms.ru/sms/send?api_id=".$settings['smsRuApiKey']."&to=". $settings['smsRecipietns'] ."&text=".urlencode("Заявка от {$data['name']},'.{$data['email']}.','.{$data['phone']}."));
 }
 
-function insertRowInGoogleSpreadSheet($listFeed,$today,$data,$country,$city,$region,$utm){
+function insertRowInGoogleSpreadSheet($listFeed,$today,$data,$country,$city,$region,$utm,$referer){
     $refPattern = '-';
     $refCode = stristr($utm['utm_campaign'],$refPattern);
-    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$data['phone'], 'e-mail'=>$data['email'], 'фио'=>$data['name'],  'адрес'=>adress($country,$city,$region),'промо-код'=>$data['promo'],'источник'=>($utm['utm_source']) ? $utm['utm_source'] : 0,'рефкод'=> $refCode);
+    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$data['phone'], 'e-mail'=>$data['email'], 'фио'=>$data['name'],  'адрес'=>adress($country,$city,$region),'промо-код'=>$data['promo'],'источник'=>($utm['utm_source']) ? $utm['utm_source'] : 0,'рефкод'=> $refCode,'cтраница_перехода_на_сайт'=>$referer);
     $listFeed->insert($row);
 }
