@@ -92,6 +92,17 @@ function sendSms($settings,$data){
 function insertRowInGoogleSpreadSheet($listFeed,$today,$data,$country,$city,$region,$utm,$referer){
     $refPattern = '-';
     $refCode = stristr($utm['utm_campaign'],$refPattern);
-    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$data['phone'], 'e-mail'=>$data['email'], 'фио'=>$data['name'],  'адрес'=>adress($country,$city,$region),'промо-код'=>$data['promo'],'источник'=>($utm['utm_source']) ? $utm['utm_source'] : 0,'рефкод'=> $refCode,'cтраница'=>$referer);
+    $row = array(
+        'дата'=>$today,
+        'статус'=>'Новая с телефоном',
+        'телефон'=>$data['phone'],
+        'e-mail'=>$data['email'],
+        'фио'=>$data['name'],
+        'адрес'=>adress($country,$city,$region),
+        'промо-код'=>$data['promo'],
+        'источник'=>($utm['utm_source']) ? $utm['utm_source'] : 0,
+        'рефкод'=> $refCode,
+        'cтраница'=>$referer
+    );
     $listFeed->insert($row);
 }
