@@ -90,8 +90,8 @@ function sendSms($settings,$data){
 }
 
 function insertRowInGoogleSpreadSheet($listFeed,$today,$data,$country,$city,$region,$utm){
-    $refPattern = '/^president2017-/';
-    $refCode = preg_match($refPattern,$utm['utm_campaign'],$matches);
-    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$data['phone'], 'e-mail'=>$data['email'], 'фио'=>$data['name'],  'адрес'=>adress($country,$city,$region),'промо-код'=>$data['promo'],'источник'=>($utm['utm_source']) ? $utm['utm_source'] : 0,'рефкод'=> $matches[0]);
+    $refPattern = 'president2017-';
+    $refCode = stristr($utm['utm_campaign'],$refPattern);
+    $row = array('дата'=>$today, 'статус'=>'Новая с телефоном', 'телефон'=>$data['phone'], 'e-mail'=>$data['email'], 'фио'=>$data['name'],  'адрес'=>adress($country,$city,$region),'промо-код'=>$data['promo'],'источник'=>($utm['utm_source']) ? $utm['utm_source'] : 0,'рефкод'=> $refCode);
     $listFeed->insert($row);
 }
