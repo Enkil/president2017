@@ -71,15 +71,18 @@
               em: 'insert_email_variable,'
           });
           fbq('track', 'PageView');
-          $( '#pageForm, #modalForm' ).click(function() {
-              fbq('track', 'Lead');
-          });
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=<?php echo $app['facebookPixel']; ?>&ev=PageView&noscript=1"/></noscript>
       <!-- DO NOT MODIFY -->
       <!-- End Facebook Pixel Code -->
 
   </head>
+  <script type="text/javascript">
+      $( '#pageForm, #modalForm' ).click(function() {
+          fbq('track', 'Lead');
+      });
+  </script>
+
   <body>
     <main>
       <!-- Banner-->
