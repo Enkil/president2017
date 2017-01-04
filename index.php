@@ -56,6 +56,29 @@
     <link type="text/plain" rel="author" href="humans.txt">
     <link rel="stylesheet" href="css/style.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+    <!-- VK Pixel Code-->
+    <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=JZQssUmff1VuaxaqeavgMPG4NgagpZTPwRXvtyaVSktC2QhipHcb9WAn9eQVYGktyfBUFjtnHEnNF/8WIbGQpSL7gMvHUQqgVDekEktrFkQvjLADHC2DDY*T6Gr2rZCkImpTeFd1IGn416hJX8yMBlli03JIjxrLtNPP2vod7dc-&pixel_id=1000061616';</script>
+      <!-- Facebook Pixel Code -->
+    <script>
+          !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+              n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+              document,'script','https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '<?php echo $app['facebookPixel']; ?>', {
+              em: 'insert_email_variable,'
+          });
+          fbq('track', 'PageView');
+          $( '#pageForm, #modalForm' ).click(function() {
+              fbq('track', 'Lead');
+          });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=<?php echo $app['facebookPixel']; ?>&ev=PageView&noscript=1"/></noscript>
+      <!-- DO NOT MODIFY -->
+      <!-- End Facebook Pixel Code -->
+
   </head>
   <body>
     <main>
@@ -127,7 +150,7 @@
                 <form class="order-now__form" method="post" action="form.php" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('orderOnPage'); return true;">
                   <input class="order-now__input" type="tel" name="phone" placeholder="Ваш телефон" required="required" />
                   <input class="order-now__input" type="hidden" name="formname" value="Заявка с формы на странице"/>
-                  <button class="btn btn--form" type="submit">Заказать</button>
+                  <button class="btn btn--form" type="submit" id="pageForm">Заказать</button>
                   <span class="form__success">Спасибо, заявка принята! Наши сотрудники свяжутся с Вами в ближайшее время!</span>
                 </form>
               </div>
@@ -267,7 +290,7 @@
           <input class="form__input" type="tel" name="phone" placeholder="Ваш телефон" required="required" />
           <input class="form__input" type="text" name="promo" placeholder="Промокод" />
           <input class="form__input" type="hidden" name="formname" value="Заявка с формы в модальном окне"/>
-          <button class="btn btn--form" type="submit">Заказать</button>
+          <button class="btn btn--form" type="submit" id="modalForm">Заказать</button>
           <span class="form__success">Спасибо, заявка принята! <br>Наши сотрудники свяжутся с Вами в ближайшее время!</span>
         </form>
       </div>

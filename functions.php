@@ -102,7 +102,7 @@ function insertRowInGoogleSpreadSheet($listFeed,$today,$data,$country,$city,$reg
         'промо-код'=>$data['promo'],
         'источник'=>($utm['utm_source']) ? $utm['utm_source'] : 0,
         'рефкод'=> $refCode,
-        'cтраница'=>$referer
+        'cтраница'=>(string)$referer
     );
     $listFeed->insert($row);
 }
