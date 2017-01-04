@@ -16,7 +16,7 @@ function formFields(){
  */
 function customFields(){
     return [
-        'site','today','country','region','city','region_time','referer',
+        'site','today','country','region','city','reg_time','referer',
     ];
 }
 
