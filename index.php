@@ -77,13 +77,13 @@
       <!-- End Facebook Pixel Code -->
 
   </head>
+  <body>
+    <!-- Facebook event -->
   <script type="text/javascript">
       $( '#pageForm, #modalForm' ).click(function() {
           fbq('track', 'Lead');
       });
   </script>
-
-  <body>
     <main>
       <!-- Banner-->
       <section class="banner">
