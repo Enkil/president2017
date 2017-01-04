@@ -71,6 +71,7 @@
               em: 'insert_email_variable,'
           });
           fbq('track', 'PageView');
+          fbq('track', 'Lead');
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=<?php echo $app['facebookPixel']; ?>&ev=PageView&noscript=1"/></noscript>
       <!-- DO NOT MODIFY -->
@@ -78,12 +79,6 @@
 
   </head>
   <body>
-    <!-- Facebook event -->
-  <script type="text/javascript">
-      $( '#pageForm, #modalForm' ).click(function() {
-          fbq('track', 'Lead');
-      });
-  </script>
     <main>
       <!-- Banner-->
       <section class="banner">
@@ -291,7 +286,7 @@
         <form class="form" method="post" action="form.php" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('orderInModal'); return true;">
           <input class="form__input" type="text" name="name" placeholder="Ваше имя" required="required" />
           <input class="form__input" type="tel" name="phone" placeholder="Ваш телефон" required="required" />
-          <input class="form__input" type="text" name="promo" placeholder="Промокод" />
+<!--          <input class="form__input" type="text" name="promo" placeholder="Промокод" />-->
           <input class="form__input" type="hidden" name="formname" value="Заявка с формы в модальном окне"/>
           <button class="btn btn--form" type="submit" id="modalForm">Заказать</button>
           <span class="form__success">Спасибо, заявка принята! <br>Наши сотрудники свяжутся с Вами в ближайшее время!</span>
