@@ -93,7 +93,7 @@
                   <div class="banner__slogan">Календарь «Президент 2017» — это подарок бизнес-класса. </div>
                   <div class="banner__appeal">Закажи эксклюзивный подарок на Новый Год!</div>
                   <div class="banner__now">
-                    <div class="ttu">Только сейчас!</div>Бесплатная доставка в любой регион! </div>
+                    <div class="ttu">Только сейчас!</div>Бесплатная доставка по европейской части России! </div>
                   <div class="banner__btn">
                     <a class="btn" href="#">Заказать</a>
                   </div>
