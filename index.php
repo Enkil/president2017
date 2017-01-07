@@ -278,6 +278,14 @@
           </div>
         </div>
       </div>
+      <div class="container">
+          <div class="row row-xs-middle">
+              <div class="col-xs-12">
+                  <p>НКО Фонд «РЕГНУМ» Юридический адрес: 123001, Улица Садовая-Кудринская, дом 22/21, стр. 1-2</p>
+                  <p>Адрес местонахождения (фактический): 119 072, г. Москва, Берсеневский пер., д. 2, стр. 1. ОГРН 1167700060637</p>
+              </div>
+          </div>
+      </div>
     </footer>
     <div class="overlay">
       <div class="overlay__bg"></div>
