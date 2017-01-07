@@ -933,6 +933,9 @@ img {
   background-color: #042b5d;
   color: #ffffff;
   padding: 20px 0 30px; }
+  .footer__ogrn {
+    font-size: 10px;
+    margin-top: 20px; }
   .footer__link {
     color: #ffffff; }
     .footer__link--email:before {
