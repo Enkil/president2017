@@ -209,7 +209,7 @@
                   <a class="btn btn--pay" id="btn--pay" href="#">Оплатить</a>
                 </div>
                   <div class="gallery__text-pay">
-                      <p>Оплати сразу и сэкономь до 35%</p>
+                      <p>Оплати сразу и сэкономь дополнительно. Стоимость по предоплате 1800р</p>
                   </div>
               </div>
             </div>
@@ -312,38 +312,45 @@
         <div class="overlay__bg"></div>
         <div class="overlay__wrapper">
             <a class="overlay__close" href="#"></a>
-            <form class="form form--pay" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('payInModal'); return true;">
+            <form class="form form--pay js-payform" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('payInModal'); return true;">
 
-                <div>
-                    <label><input type="radio">Доставка по европейской части РФ - бесплатно</label>
-                    <label><input type="radio">Остальная территория РФ - 300 руб</label>
-                    <label><input type="radio">Международная доставка" - 500 руб</label>
+                <div class="payfor">
+                    <h3>Оплатить календарь "Президент 2017"</h3>
+                    <p>После оплаты оператор свяжется с вами и уточнит удобное время доставки</p>
+                    <p>При нажатии кнопки "Оплатить" вы будете перенаправлены на сайт платежной системы.</p>
                 </div>
 
+                <div>
+                    <p>Выберите регион доставки:</p>
+                    <label ><input type="radio" name="region" data-price="0" id="rf-euro">Доставка по европейской части РФ - бесплатно</label>
+                    <label ><input type="radio" name="region" data-price="300" id="rf-all">Остальная территория РФ - 300 руб</label>
+                    <label ><input type="radio" name="region" data-price="500" id="world">Международная доставка" - 500 руб</label>
+                </div>
 
                 <input type="hidden" name="receiver" value="41001750055565">
                 <input type="hidden" name="quickpay-form" value="shop">
                 <input type="hidden" name="targets" value="Regnum: Предоплата календаря 'Президент 2017'">
 
-                <div>
+                <div class="ym">
+                    <p>Выбирите тип оплаты:</p>
                     <label><input type="radio" name="paymentType" value="PC">Яндекс.Деньгами</label>
                     <label><input type="radio" name="paymentType" value="AC">Банковской картой</label>
                 </div>
 
 
-                <input type="hidden" name="sum" value="5" data-type="number">
+                <input type="hidden" name="sum" value="1999" data-type="number" class="js-ym-sum">
 
                 <input type="hidden" name="formcomment" value="НКО Фонд «РЕГНУМ»">
+                <input type="hidden" name="successURL" value="https://president.regnum.ru">
                 <input type="hidden" name="short-dest" value="Regnum: Предоплата календаря 'Президент 2017'">
 
-
-
-
-                <input type="hidden" name="comment" value="Хотелось бы дистанционного управления.">
+                <input type="hidden" name="comment" value="">
                 <input type="hidden" name="need-fio" value="true">
                 <input type="hidden" name="need-email" value="false">
                 <input type="hidden" name="need-phone" value="true">
                 <input type="hidden" name="need-address" value="true">
+
+                <p class="pricefor">Общая стоимость с учетом скидки: <span class="js-pricepay">1999</span>руб</p>
 
                 <input type="submit" value="Оплатить">
             </form>

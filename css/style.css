@@ -1084,6 +1084,24 @@ img {
     display: none; }
   .form .btn {
     max-width: 100%; }
+  .form--pay p {
+    margin-top: 5px;
+    margin-bottom: 5px; }
+  .form--pay p:last-child {
+    font-size: 12px;
+    margin-bottom: 20px; }
+  .form--pay p.pricefor {
+    margin-top: 15px; }
+  .form--pay label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .form--pay input[type="radio"] {
+    margin-right: 10px; }
+  .form--pay input[type="submit"] {
+    margin-top: 20px; }
+  .form--pay .ym {
+    margin-top: 30px; }
 
 .banner {
   padding-bottom: 70px;
