@@ -206,8 +206,11 @@
                   <p>Не упусти уникальную возможность</p>
                 </div>
                 <div class="gallery__btn">
-                  <a class="btn" href="#">Заказать</a>
+                  <a class="btn btn--pay" id="btn--pay" href="#">Оплатить</a>
                 </div>
+                  <div class="gallery__text-pay">
+                      <p>Оплати сразу и сэкономь до 35%</p>
+                  </div>
               </div>
             </div>
             <div class="col-xs-12 col-xl-6">
@@ -237,7 +240,7 @@
               <div class="properties__text">Высочайшее качество печати</div>
             </div>
             <div class="properties__text-wrapper col-xs-12 col-lg-3">
-              <div class="properties__text">Бесплатная доставка</div>
+              <div class="properties__text">Бесплатная доставка по европейской части РФ</div>
             </div>
             <div class="properties__text-wrapper col-xs-12 col-lg-2">
               <div class="properties__text">Оплата при получении</div>
@@ -302,6 +305,49 @@
           <span class="form__success">Спасибо, заявка принята! <br>Наши сотрудники свяжутся с Вами в ближайшее время!</span>
         </form>
       </div>
+    </div>
+
+    <!-- Yandex Money Form   -->
+    <div class="overlay overlay--pay">
+        <div class="overlay__bg"></div>
+        <div class="overlay__wrapper">
+            <a class="overlay__close" href="#"></a>
+            <form class="form form--pay" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('payInModal'); return true;">
+
+                <div>
+                    <label><input type="radio">Доставка по европейской части РФ - бесплатно</label>
+                    <label><input type="radio">Остальная территория РФ - 300 руб</label>
+                    <label><input type="radio">Международная доставка" - 500 руб</label>
+                </div>
+
+
+                <input type="hidden" name="receiver" value="41001750055565">
+                <input type="hidden" name="quickpay-form" value="shop">
+                <input type="hidden" name="targets" value="Regnum: Предоплата календаря 'Президент 2017'">
+
+                <div>
+                    <label><input type="radio" name="paymentType" value="PC">Яндекс.Деньгами</label>
+                    <label><input type="radio" name="paymentType" value="AC">Банковской картой</label>
+                </div>
+
+
+                <input type="hidden" name="sum" value="5" data-type="number">
+
+                <input type="hidden" name="formcomment" value="НКО Фонд «РЕГНУМ»">
+                <input type="hidden" name="short-dest" value="Regnum: Предоплата календаря 'Президент 2017'">
+
+
+
+
+                <input type="hidden" name="comment" value="Хотелось бы дистанционного управления.">
+                <input type="hidden" name="need-fio" value="true">
+                <input type="hidden" name="need-email" value="false">
+                <input type="hidden" name="need-phone" value="true">
+                <input type="hidden" name="need-address" value="true">
+
+                <input type="submit" value="Оплатить">
+            </form>
+        </div>
     </div>
     <script src="js/script.min.js"></script>
 

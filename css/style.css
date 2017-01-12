@@ -2434,6 +2434,20 @@ img {
     margin: 0 auto; }
   .banner__appeal:after{
     margin: 0 auto; }
+  .banner__price{
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+  .banner__price-old{
+    font-size: 16px; }
+  .banner__price-new{
+    font-size: 20px; }
+  .banner__issue{
+    font-size: 14px; }
   .gallery__img{
     width: auto !important;
     height: auto !important; } }
+  @media (min-width: 48em) and (max-width: 63.99em){
+  .banner__price{
+    right: 15%; } }
