@@ -93,9 +93,9 @@
                   <div class="banner__slogan">Календарь «Президент 2017» — это подарок бизнес-класса. </div>
                   <div class="banner__appeal">Закажи эксклюзивный подарок на Новый Год!</div>
                   <div class="banner__now">
-                    <div class="ttu">Только сейчас!</div>Бесплатная доставка по европейской части России! </div>
+                    <div class="ttu">Только сейчас!</div>Бесплатная доставка по европейской территории России! </div>
                   <div class="banner__btn">
-                    <a class="btn" href="#">Заказать</a>
+                    <a class="btn js-btn" href="#">Заказать</a>
                   </div>
                 </div>
                 <div class="banner__price">
@@ -186,7 +186,7 @@
               <div class="cabinet-order">
                 <div class="cabinet-order__text">Наш календарь — идеальное дополнение к любому интерьеру!</div>
                 <div class="cabinet-order__btn">
-                  <a class="btn" href="#">Заказать</a>
+                  <a class="btn js-btn" href="#">Заказать</a>
                 </div>
               </div>
             </div>
@@ -206,7 +206,7 @@
                   <p>Не упусти уникальную возможность</p>
                 </div>
                 <div class="gallery__btn">
-                  <a class="btn btn--pay" id="btn--pay" href="#">Оплатить</a>
+                  <a class="btn btn--pay js-btnpay" id="btn--pay" href="#">Оплатить</a>
                 </div>
                   <div class="gallery__text-pay">
                       <p>Оплати сразу и сэкономь дополнительно. Стоимость по предоплате 1800р</p>
@@ -240,7 +240,7 @@
               <div class="properties__text">Высочайшее качество печати</div>
             </div>
             <div class="properties__text-wrapper col-xs-12 col-lg-3">
-              <div class="properties__text">Бесплатная доставка по европейской части РФ</div>
+              <div class="properties__text">Бесплатная доставка по европейской территории РФ</div>
             </div>
             <div class="properties__text-wrapper col-xs-12 col-lg-2">
               <div class="properties__text">Оплата при получении</div>
@@ -252,7 +252,7 @@
             </div>
             <div class="col-xs-12 col-lg-3">
               <div class="opt__btn">
-                <a class="btn btn--opt" href="#">Заказать оптом</a>
+                <a class="btn btn--opt js-btn" href="#">Заказать оптом</a>
               </div>
               <div class="opt__btn-text">со скидкой до 40%</div>
             </div>
@@ -292,7 +292,7 @@
           </div>
       </div>
     </footer>
-    <div class="overlay">
+    <div class="overlay js-overlay">
       <div class="overlay__bg"></div>
       <div class="overlay__wrapper">
         <a class="overlay__close" href="#"></a>
@@ -315,14 +315,14 @@
             <form class="form form--pay js-payform" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml" onsubmit="yaCounter<?php echo $app['yandexMetrika'] ?>.reachGoal('payInModal'); return true;">
 
                 <div class="payfor">
-                    <h3>Оплатить календарь "Президент 2017"</h3>
+                    <h3>Оплатить календарь "Президент"</h3>
                     <p>После оплаты оператор свяжется с вами и уточнит удобное время доставки</p>
                     <p>При нажатии кнопки "Оплатить" вы будете перенаправлены на сайт платежной системы.</p>
                 </div>
 
                 <div>
                     <p>Выберите регион доставки:</p>
-                    <label ><input type="radio" name="region" data-price="0" id="rf-euro">Доставка по европейской части РФ - бесплатно</label>
+                    <label ><input type="radio" name="region" data-price="0" id="rf-euro">Доставка по европейской территории РФ - бесплатно</label>
                     <label ><input type="radio" name="region" data-price="300" id="rf-all">Остальная территория РФ - 300 руб</label>
                     <label ><input type="radio" name="region" data-price="500" id="world">Международная доставка" - 500 руб</label>
                 </div>
@@ -338,7 +338,7 @@
                 </div>
 
 
-                <input type="hidden" name="sum" value="1999" data-type="number" class="js-ym-sum">
+                <input type="hidden" name="sum" value="1800" data-type="number" class="js-ym-sum">
 
                 <input type="hidden" name="formcomment" value="НКО Фонд «РЕГНУМ»">
                 <input type="hidden" name="successURL" value="https://president.regnum.ru">
